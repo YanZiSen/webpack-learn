@@ -5,12 +5,39 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const glob = require('glob')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+const setMPA = () => {
+    const entry = {}
+    const webpackPlugins = []
+    const entryFiles = glob.sync(path.join(__dirname,'/src/*/index.js'))
+    console.log(entryFiles)
+    entryFiles.map(filePath => {
+        let match = filePath.match(/src\/(.*)\/index\.js/)
+        let fileName = match && match[1]
+        console.log(fileName)
+        entry[fileName] = filePath
+        webpackPlugins.push(new HtmlWebpackPlugin({
+            template: path.join(__dirname, `src/${fileName}/index.html`),
+            chunks: [fileName],
+            filename: `${fileName}.html`,
+            inject: true,
+            minify: {
+                html5: true,
+                collapseWhitespace: true,
+                preserveLineBreaks: false,
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: false
+            }
+        }))
+    })
+    return {entry, webpackPlugins}
+}
+let {entry, webpackPlugins} = setMPA()
 module.exports = {
-    entry: {
-        index: './src/index.js',
-        search: './src/search.js'
-    },
+    entry: entry,
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name]_[chunkhash:8].js',//占位符
@@ -23,7 +50,28 @@ module.exports = {
             },
             {
                 test: /\.styl/,
-                use: [MiniCssExtractPlugin.loader,'css-loader','stylus-loader']
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => [
+                                require('autoprefixer')({
+                                    overrideBrowserslist: ['last 2 version', '>1%', 'ios 7']
+                                })
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'px2rem-loader',
+                        options: {
+                            remPrecision: 8,
+                            remUnit: 75
+                        }
+                    },
+                    'stylus-loader',
+                ]
             },
             {
                 test: /\.(jpg|png|gif|jpeg)$/,
@@ -56,34 +104,21 @@ module.exports = {
             assetNameRegExp:/\.css$/,
             cssProcessor: require('cssnano')
         }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/index.html'),
-            chunks: ['index'],
-            filename: 'index.html',
-            inject: true,
-            minify: {
-                html5: true,
-                collapseWhitespace: true,
-                preserveLineBreaks: false,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: false
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/search.html'),
-            chunks: ['search'],
-            filename: 'search.html',
-            inject: true,
-            minify: {
-                html5: true,
-                collapseWhitespace: true,
-                preserveLineBreaks: false,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: false
-            }
+        new CleanWebpackPlugin(),
+        new HtmlWebpackExternalsPlugin({
+            externals: [
+                {
+                    module: 'react',
+                    entry: 'https://cdn.bootcss.com/react/16.8.6/cjs/react.production.min.js',
+                    global: 'React'
+                },
+                {
+                    module: 'react-dom',
+                    entry: 'https://cdn.bootcss.com/react-dom/16.9.0-alpha.0/cjs/react-dom-server.browser.production.min.js',
+                    global: 'ReactDOM'
+                }
+            ]
         })
-    ],
+    ].concat(webpackPlugins),
     mode: 'production'
 }
