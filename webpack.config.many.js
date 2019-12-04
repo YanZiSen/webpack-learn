@@ -68,13 +68,13 @@ module.exports = {
                             ]
                         }
                     },
-                    {
-                        loader: 'px2rem-loader',
-                        options: {
-                            remPrecision: 8,
-                            remUnit: 75
-                        }
-                    },
+                    // {
+                    //     loader: 'px2rem-loader',
+                    //     options: {
+                    //         remPrecision: 8,
+                    //         remUnit: 75
+                    //     }
+                    // },
                     'stylus-loader'
                 ]
             },
