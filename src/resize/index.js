@@ -5,8 +5,8 @@ class Resize {
     _startPos = {}
     _startSize = {}
     _resizeEl = null
-    _handleList = []
-    handlerType
+    _handlerList = []
+    handlerType = null
     constructor () {
 
     }
@@ -15,10 +15,10 @@ class Resize {
         // resize 绑定事件
         let that = this
         this._handlerList = [
-            document.querySelector('.left-top'),
-            document.querySelector('.right-top'),
-            document.querySelector('.left-bottom'),
-            document.querySelector('.right-bottom')
+            'left-top',
+            'right-top',
+            'left-bottom',
+            'right-bottom'
         ]
         // let handlerEl = document.querySelector('.right-top')
         let handlerEl = document.body
@@ -29,25 +29,28 @@ class Resize {
         this._resizeEl = document.querySelector('.resize-container')
     }
     mouseDown (e) {
-        let index = this._handleList.indexOf(e.target)
+        console.log(e.target)
+        console.log(e.target.dataset.position)
+        let index = this._handlerList.indexOf(e.target.dataset.position)
+        console.log('index', index)
         this.handlerType = [
             {
                 type: 'left-top',
-                left: -1,
+                left: 1,
                 height: -1,
                 width: -1,
-                top: -1
+                top: 1
             }, 
             {
                 type: 'right-top',
                 left: 0,
-                top: -1,
+                top: 1,
                 height: -1,
                 width: 1
             },
             {
                 type: 'left-bottom',
-                left: -1,
+                left: 1,
                 top: 0,
                 height: 1,
                 width: -1
@@ -59,7 +62,7 @@ class Resize {
                 height: 1,
                 width: 1
             }
-        ]
+        ][index]
         if (index > -1) {
             this._resizeActive = true
             this._startPos = {
@@ -73,16 +76,31 @@ class Resize {
                 top: this._resizeEl.offsetTop
             }
             console.log('_startSize', this._startSize)
+        } else {
+            this._resizeActive = false
         }
     }
     mouseUp () {
         this._resizeActive = false
+        console.log('mouseup', this._resizeActive)
     }
     mouseMove (e) {
         if ( this._resizeActive) {
-            this._resizeEl.style.width = this._startSize.width + e.pageX - this._startPos.x + 'px'
-            this._resizeEl.style.height = this._startSize.height - (e.pageY - this._startPos.y) + 'px'
-            this._resizeEl.style.top = this._startSize.top + (e.pageY - this._startPos.y) + 'px'
+            let changeY = e.pageY - this._startPos.y
+            let changeX = e.pageX - this._startPos.x
+            this._resizeEl.style.width = this._startSize.width 
+            + this.handlerType.width * changeX 
+            + 'px'
+
+            this._resizeEl.style.height = this._startSize.height 
+            + this.handlerType.height * changeY 
+            + 'px'
+            this._resizeEl.style.top = this._startSize.top 
+            + this.handlerType.top * changeY
+            + 'px'
+            this._resizeEl.style.left = this._startSize.left 
+            + this.handlerType.left * changeX
+            + 'px'
         }
     }
 }
