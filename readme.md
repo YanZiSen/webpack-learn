@@ -21,7 +21,8 @@
             "@babel/proposal-class-properties"
         ]
     </pre>
-
+## loader
+   * loader 本质上是一个函数，输入为资源字符串，source-map, AST 抽象语法树，输出是处理过的这三个参数，可以理解为webpack的翻译官，使其他非js类型的文件也可以作为模块来处理
 ## webpack 文件监听的实现方式
 * 命令行内添加--watch
 * webpack 配置中添加watch key ,value为 true
@@ -44,7 +45,7 @@
 * npm scripts rm -rf ./dist && webpack
 * rimraf ./dist && webpack
 
-## vue-cli 的css解析与配置在wepback.prod.conf.js/webpack.dev.conf.js/webpack.test.conf.js 里各自定义，然后与基础配置合并
+### vue-cli 的css解析与配置在wepback.prod.conf.js/webpack.dev.conf.js/webpack.test.conf.js 里各自定义，然后与基础配置合并
 
 ## 抽离多页面公共库并放到cdn
     * html-webpack-externals-plugin 插件
