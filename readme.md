@@ -50,3 +50,11 @@
 ## 抽离多页面公共库并放到cdn
     * html-webpack-externals-plugin 插件
     * SplitChunksPlugin webpack内置插件，公共模块分离切割
+## treeShaking 
+   * 支持es6模块，可以静态分析依赖
+   * DCE dead code elimination （死码消除）
+      * 代码执行结果不会被用到
+      * 代码永远不被执行，不会被用到
+      * 代码只会影响死变量
+   * 如果函数有副作用，则treeShaking无法摇掉
+   * 在静态分析中做标记，在uglify阶段进行移除
