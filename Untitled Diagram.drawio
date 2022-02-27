@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-01-08T15:05:45.110Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="YiEJc4OSXeS242SXlz_A" version="16.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-27T06:48:56.680Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36" etag="GHDV0txaosUGIrInN6kC" version="16.4.5" type="github">
   <diagram name="Page-1" id="a7904f86-f2b4-8e86-fa97-74104820619b">
-    <mxGraphModel dx="3137" dy="3683" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1939" dy="3016" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -270,7 +270,7 @@
         <mxCell id="pEGMGXlAXhKO9HlwLJ9M-96" value="addModuleChain" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=1;comic=1;fontFamily=Comic Sans MS;strokeColor=#CC6600;strokeWidth=2;fillColor=#FCFCFC;" parent="pEGMGXlAXhKO9HlwLJ9M-89" vertex="1">
           <mxGeometry x="45" y="280" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HaB5x4a0chJLx36Dikdz-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=1;comic=1;fontFamily=Comic Sans MS;strokeColor=#CC6600;strokeWidth=2;fillColor=#FCFCFC;" vertex="1" parent="pEGMGXlAXhKO9HlwLJ9M-89">
+        <mxCell id="HaB5x4a0chJLx36Dikdz-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=1;comic=1;fontFamily=Comic Sans MS;strokeColor=#CC6600;strokeWidth=2;fillColor=#FCFCFC;" parent="pEGMGXlAXhKO9HlwLJ9M-89" vertex="1">
           <mxGeometry x="45" y="957" width="10" height="78" as="geometry" />
         </mxCell>
         <mxCell id="pEGMGXlAXhKO9HlwLJ9M-90" value="NormalModuleFactory" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;comic=1;fontFamily=Comic Sans MS;strokeColor=#CC6600;strokeWidth=2;fillColor=#FCFCFC;" parent="1" vertex="1">
@@ -467,14 +467,42 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HaB5x4a0chJLx36Dikdz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.857;entryY=0.659;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pEGMGXlAXhKO9HlwLJ9M-175" target="HaB5x4a0chJLx36Dikdz-2">
+        <mxCell id="HaB5x4a0chJLx36Dikdz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.857;entryY=0.659;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pEGMGXlAXhKO9HlwLJ9M-175" target="HaB5x4a0chJLx36Dikdz-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HaB5x4a0chJLx36Dikdz-5" value="this..buildModule" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;comic=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+        <mxCell id="HaB5x4a0chJLx36Dikdz-5" value="this..buildModule" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;comic=1;fontFamily=Comic Sans MS;" parent="1" vertex="1">
           <mxGeometry x="398" y="1584" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="HaB5x4a0chJLx36Dikdz-6" value="grep &#39;hooks.createParser&#39; -rn ./node_modules/webpack. 查找javascript等parser的注册" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HaB5x4a0chJLx36Dikdz-6" value="grep &#39;hooks.createParser&#39; -rn ./node_modules/webpack. 查找javascript等parser的注册" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1373.7142857142862" y="1582" width="313" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-1" value="DependenciesBlock" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="970" y="3064" width="236" height="196" as="geometry">
+            <mxRectangle x="970" y="3064" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-2" value="+ dependencies: Dependency[]&#xa;+ blocks: AsyncDependenciesBlock[]&#xa;+ variables:DependenciesBlockVariable[]&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;autosize=1;fontColor=#000000;labelBackgroundColor=default;" vertex="1" parent="vWq0HQm7oa7uGI7BUlhW-1">
+          <mxGeometry y="26" width="236" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="vWq0HQm7oa7uGI7BUlhW-1">
+          <mxGeometry y="72" width="236" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-4" value="+ addBlock&#xa;+ addDependency&#xa;+ removeDependency&#xa;+ updateHash&#xa;+ disconnect&#xa;+ unseal&#xa;+ hasDependencies(filter)&#xa;+ sortItem&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;autosize=1;container=0;collapsible=0;treeFolding=0;" vertex="1" collapsed="1" parent="vWq0HQm7oa7uGI7BUlhW-1">
+          <mxGeometry y="80" width="236" height="116" as="geometry">
+            <mxRectangle y="80" width="236" height="116" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-5" value="Dependency" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=default;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1291" y="2989" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-6" value="+ module&#xa;+ weak&#xa;+ optional&#xa;+ loc&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" vertex="1" parent="vWq0HQm7oa7uGI7BUlhW-5">
+          <mxGeometry y="26" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;" vertex="1" parent="vWq0HQm7oa7uGI7BUlhW-5">
+          <mxGeometry y="86" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-8" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" vertex="1" parent="vWq0HQm7oa7uGI7BUlhW-5">
+          <mxGeometry y="94" width="160" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
