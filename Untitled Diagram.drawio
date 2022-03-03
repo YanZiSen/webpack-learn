@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-03T04:03:15.696Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36" etag="eaRCsx5j3y9ncyC6oQnU" version="16.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-03T05:21:59.096Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36" etag="jHbmZJ3TTtjQCi5ZGrV2" version="16.4.5" type="github">
   <diagram name="Page-1" id="a7904f86-f2b4-8e86-fa97-74104820619b">
-    <mxGraphModel dx="1652" dy="2905" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2286" dy="3313" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -557,7 +557,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-22" value="ChunkGroup" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=default;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="1375" y="3648" width="290" height="308" as="geometry" />
+          <mxGeometry x="1375" y="3622" width="290" height="742" as="geometry" />
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-23" value="+ groupDebugId&#xa;+ options&#xa;+ _children&#xa;+ _parents&#xa;+ _blocks&#xa;+ chunks&#xa;+ origins&#xa;+ _moduleIndicies&#xa;+ _moduleIndicies2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" parent="vWq0HQm7oa7uGI7BUlhW-22" vertex="1">
           <mxGeometry y="26" width="290" height="130" as="geometry" />
@@ -565,11 +565,11 @@
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;" parent="vWq0HQm7oa7uGI7BUlhW-22" vertex="1">
           <mxGeometry y="156" width="290" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="vWq0HQm7oa7uGI7BUlhW-25" value="+ constructor(options:ChunkGroupOptions)&#xa;+ addOptions(options):void&#xa;+ get name()&#xa;+ set name()&#xa;+ get debugId&#xa;+ get id&#xa;+ unshifChunk(chunk): boolean // 删除并入队chunk&#xa;+ insertChunk(chunk): boolean&#xa;+ pushChunk&#xa;+ replaceChunk" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" parent="vWq0HQm7oa7uGI7BUlhW-22" vertex="1">
-          <mxGeometry y="164" width="290" height="144" as="geometry" />
+        <mxCell id="vWq0HQm7oa7uGI7BUlhW-25" value="+ constructor(options:ChunkGroupOptions)&#xa;+ addOptions(options):void&#xa;+ get name()&#xa;+ set name()&#xa;+ get debugId&#xa;+ get id&#xa;+ unshifChunk(chunk): boolean // 删除并入队chunk&#xa;+ insertChunk(chunk): boolean&#xa;+ pushChunk(chunk): boolean&#xa;+ replaceChunk(chunk): boolean&#xa;+ removeChunk(chunk): boolean&#xa;+ isInitial(): false;&#xa;+ addChild(chunk): boolean;&#xa;+ getChildren(): ?&#xa;+ getNumberOfChildren(): number;&#xa;+ get childrenIterable(): SortableSet&lt;ChunkGroup&gt;&#xa;+ removeChild(chunk): boolean;&#xa;+ addParent(parentChunk): boolean;&#xa;+ getParents(): ?&#xa;+ setParents(newParents): void;&#xa;+ getNumberOfParents: number;&#xa;+ hasParent(parent): boolean;&#xa;+ get parentsIterable(): SortableSet&lt;ChunkGroup&gt;&#xa;+ removeParent(chunk): boolean;&#xa;+ getBlocks():&#xa;+ getNumberOfBlocks(): number;&#xa;+ hasBlock(block): boolean;&#xa;+ get blocksIterable():&#xa;+ addBlock(block): boolean;&#xa;+ addOrigin(module, loc, request): void;&#xa;+ containsModule(module): boolean;&#xa;+ getFiles();&#xa;+ remove(reason): void;&#xa;+ sortItems():void;&#xa;+ compareTo(otherGroup: ChunkGroup)&#xa;+ getChildrenByOrders():&#xa;+ setModuleIndex(module,index):void&#xa;+ getModuleIndex(module):number&#xa;+ setModuleIndex2(module,index):void&#xa;+ getModuleIndex2(module):number&#xa;+ checkConstraints()&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" parent="vWq0HQm7oa7uGI7BUlhW-22" vertex="1">
+          <mxGeometry y="164" width="290" height="578" as="geometry" />
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-26" value="Entrypoint" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=default;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="1023" y="3647" width="274" height="112" as="geometry" />
+          <mxGeometry x="1022" y="3652" width="274" height="112" as="geometry" />
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-27" value="+ runtimeChunk" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" parent="vWq0HQm7oa7uGI7BUlhW-26" vertex="1">
           <mxGeometry y="26" width="274" height="18" as="geometry" />
@@ -587,7 +587,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-31" value="Chunk" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=default;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="1712" y="3634" width="160" height="294" as="geometry" />
+          <mxGeometry x="1726" y="3634" width="160" height="294" as="geometry" />
         </mxCell>
         <mxCell id="vWq0HQm7oa7uGI7BUlhW-32" value="+ id&#xa;+ ids&#xa;+ debugId&#xa;+ name&#xa;+ preventIntegration&#xa;+ entryModule&#xa;+ _modules&#xa;+ filenameTemplate&#xa;+ _groups&#xa;+ files&#xa;+ rendered&#xa;+ hash&#xa;+ contentHash&#xa;+ renderedHash&#xa;+ chunkReason&#xa;+ extraAsync&#xa;+ removedModules&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=default;fontColor=#000000;autosize=1;" parent="vWq0HQm7oa7uGI7BUlhW-31" vertex="1">
           <mxGeometry y="26" width="160" height="242" as="geometry" />
